@@ -19,7 +19,8 @@ def reset_everthing():
     elif desire == 'no' or desire == 'n':
         return
     else:
-        print('{} is not reconied, please try again'.format(desire.title()))
+        print('{} is not reconized, please try again.'.format(desire.title()))
+        print('Come on, it is not that hard to type yes or no.')
 
 #Set the filters that will be used. City, month, or day
 def data_set():
@@ -57,11 +58,12 @@ def data_set():
                   "Washington, Washington DC, DC, or W.")
         else:
             print('\n{} is not reconized, please try again.'.format(city))
+            print('Do you not know how to spell?')
 
     #Set if no filter or filter by month or day will be used
     while True:
         date_narrow = input('The data can be sorted by month or day or not at all.\n'
-                            'Please select month, day, or no filter\n').lower()
+                            'Please select month, day, or no filter.\n').lower()
         if date_narrow == 'month' or date_narrow == 'm':
             date_narrow = 'month'
             break
@@ -72,7 +74,8 @@ def data_set():
             date_narrow = 'no filter'
             break
         else:
-            print('{} is not reconized, plese select month, day, or no filter'.format(date_narrow))
+            print('{} is not reconized, plese select month, day, or no filter.'.format(date_narrow))
+            print('This is most important. Well not really, but here we are.')
 
     #Verify city and no time filter
     while date_narrow == 'no filter':
@@ -85,7 +88,8 @@ def data_set():
             print('Back to the top')
             return data_set()
         else:
-            print('{} is not reconized, please try again'.format(reset))
+            print('{} is not reconized, please try again.'.format(reset))
+            print('You suck at this.')
 
     #Specify the month that will be used
     while date_narrow == 'month':
@@ -116,7 +120,8 @@ def data_set():
             month_num = '06'
             break
         else:
-            print('{} is not reconized, please try again'.format(reset))
+            print('{} is not reconized, please try again.'.format(reset))
+            print('I gave the spelling to you. Just copy and paste.')
 
     #Specify the day that will be used
     while date_narrow == 'day':
@@ -152,6 +157,7 @@ def data_set():
             break
         else:
             print('{} is not reconized, please try again.'.format(reset))
+            print('I gave the days to you. Just copy and paste.')
 
     #Verify selections for month
     while date_narrow == 'month':
@@ -167,6 +173,7 @@ def data_set():
             return data_set()
         else:
             print('{} is not reconized, please try again.'.format(f_reset))
+            print('This is a yes or no question. Only William Barr can screw it up more than you.')
 
     #Verify selections for day
     while date_narrow == 'day':
@@ -182,6 +189,7 @@ def data_set():
             return data_set()
         else:
             print('{} is not reconized, please try again.'.format(f_reset))
+            print('Do you not know how a keyboard works?')
 
 #Return raw data based on filters
 def more(city_file, line):
@@ -203,7 +211,7 @@ def more(city_file, line):
     elif want == 'no' or want == 'n':
         return reset_everthing()
     else:
-        print('{} is not valid, plase try again'.format(want))
+        print('{} is not valid, plase try again.'.format(want))
         return more(city_file, line)
 
 
@@ -318,7 +326,7 @@ def bike_data():
     user_type_c1 = str(user_type_s[0])
     user_type_c2 = str(user_type_s[1])
     print()
-    print('There were {} {} riders and {} {} riders'.format(user_type_c1, user_type_1, user_type_c2, user_type_2))
+    print('There were {} {} riders and {} {} riders.'.format(user_type_c1, user_type_1, user_type_c2, user_type_2))
 
     if city_file_name == 'new_york_city.csv' or city_file_name == 'chicago.csv':
         #Birth Years
@@ -339,10 +347,10 @@ def bike_data():
         gender_c1 = str(gender_s[0])
         gender_c2 = str(gender_s[1])
         print()
-        print('There were {} {} riders and {} {} riders'.format(gender_c1, gender_1, gender_c2, gender_2))
+        print('There were {} {} riders and {} {} riders.'.format(gender_c1, gender_1, gender_c2, gender_2))
     else:
         print()
-        print('Washington has no gender or age data')
+        print('Washington has no gender or age data.')
 
     more(city_filter, 0)
 
